@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 793266193}
   - component: {fileID: 793266192}
   m_Layer: 5
-  m_Name: Well done text
+  m_Name: Game Over text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
