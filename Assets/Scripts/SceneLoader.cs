@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
-    public void LoadNextScene()
+    public void LoadNextScene() // Thus method loads the next scene by incrementing + 1 to the current scene index.
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-    public void LoadStartScene()
+    public void LoadStartScene() // This method loads the first scene, as per the build settings.
     {
         SceneManager.LoadScene(0);
     }
