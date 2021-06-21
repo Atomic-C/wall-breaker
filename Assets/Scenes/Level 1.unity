@@ -888,6 +888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a77fe5cb85cd34bbdf1e13dbdfdd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minX: 1
+  maxX: 15
   screenWidthInUnits: 16
 --- !u!1 &1261060015
 GameObject:
