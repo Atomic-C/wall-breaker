@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
 
     // Configuration parameters
     [SerializeField] Paddle paddle1; // We want to link the paddle with the ball.
+    private bool hasStarted = false;
 
     // State
     Vector2 paddleToBallVector; // Distance between paddle and the ball
@@ -18,7 +19,20 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LockBallToPaddle();
+        if (hasStarted != true)
+        {
+            LockBallToPaddle();
+            LaunchBallOnMouseClick();
+        }
+    }
+
+    private void LaunchBallOnMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            hasStarted = true;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 15f);
+        }
     }
 
     private void LockBallToPaddle()
