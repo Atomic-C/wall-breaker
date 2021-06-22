@@ -18,6 +18,11 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LockBallToPaddle();
+    }
+
+    private void LockBallToPaddle()
+    {
         Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y); // Where paddle is!
         transform.position = paddlePos + paddleToBallVector; // Paddle + difference = where ball should be.
     }
