@@ -5,10 +5,13 @@ public class Ball : MonoBehaviour
 
     // Configuration parameters
     [SerializeField] Paddle paddle1; // We want to link the paddle with the ball.
-    private bool hasStarted = false;
+    [SerializeField] float xPush = 2f;
+    [SerializeField] float yPush = 15f;
+
 
     // State
     Vector2 paddleToBallVector; // Distance between paddle and the ball
+    private bool hasStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +20,21 @@ public class Ball : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // Note this method updates at EVERY FRAME.
     {
-        if (hasStarted != true)
-        {
+        if (!hasStarted) // If hasStarted is false, lock the ball to the paddle and launch on mouse click.
+        { //If hasStarted is true the below methods will not be called.
             LockBallToPaddle();
             LaunchBallOnMouseClick();
         }
     }
 
-    private void LaunchBallOnMouseClick()
+    private void LaunchBallOnMouseClick() // This method launches the ball on left mouse click.
     {
         if (Input.GetMouseButtonDown(0))
         {
-            hasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 15f);
+            hasStarted = true; // As this turns true on click, if statement on update stops.
+            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);
         }
     }
 
