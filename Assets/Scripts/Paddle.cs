@@ -17,7 +17,7 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.mousePosition.x / Screen.width);
+        // Debug.Log(Input.mousePosition.x / Screen.width);
 
         float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;
         Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y); // In this line stay where you are.
