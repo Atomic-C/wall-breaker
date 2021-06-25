@@ -53,8 +53,8 @@ public class Ball : MonoBehaviour
     {
         if (hasStarted == true) // This conditional statement limits sound effects until the game starts.
         {
-            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
-            myAudioSource.PlayOneShot(clip);
+            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)]; // clip is a random index of our array <3
+            myAudioSource.PlayOneShot(clip); // Here we use PlayOneShot to play clip
         }
     }
 }
