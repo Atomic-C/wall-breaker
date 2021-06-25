@@ -44,8 +44,11 @@ public class Ball : MonoBehaviour
         transform.position = paddlePos + paddleToBallVector; // Paddle + difference = where ball should be.
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // This method allows sound reproduction on ball collision.
     {
-        GetComponent<AudioSource>().Play();
+        if (hasStarted == true) // This conditional statement limits sound effects until the game starts.
+        {
+            GetComponent<AudioSource>().Play();
+        }
     }
 }
