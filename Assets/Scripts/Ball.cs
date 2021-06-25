@@ -7,16 +7,21 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle1; // We want to link the paddle with the ball.
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
+    [SerializeField] AudioClip[] ballSounds;
 
 
     // State
     Vector2 paddleToBallVector; // Distance between paddle and the ball
     private bool hasStarted = false;
 
+    // Cached component references
+    AudioSource myAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle1.transform.position; // Difference between ball and paddle respectively
+        myAudioSource = GetComponent<AudioSource>(); // Find component and know it from now on instead of get it all the time.
     }
 
     // Update is called once per frame
@@ -48,7 +53,8 @@ public class Ball : MonoBehaviour
     {
         if (hasStarted == true) // This conditional statement limits sound effects until the game starts.
         {
-            GetComponent<AudioSource>().Play();
+            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
+            myAudioSource.PlayOneShot(clip);
         }
     }
 }
