@@ -18,6 +18,7 @@ public class Block : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position); // Create an audio source that plays "here"
         Destroy(gameObject);
+        level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
         // Debug.Log(collision.gameObject.name);
     }
 }
