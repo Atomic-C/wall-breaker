@@ -16,9 +16,14 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        DestroyBlock();
+    }
+
+    private void DestroyBlock()
+    {
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position); // Create an audio source that plays "here"
         Destroy(gameObject);
         level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
-        // Debug.Log(collision.gameObject.name);
+                                // Debug.Log(collision.gameObject.name);
     }
 }
