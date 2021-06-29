@@ -7,6 +7,7 @@ public class Block : MonoBehaviour
 
     // Cached reference
     Level level; //This is where we cache variable of type Level.
+    GameStatus gameStatus;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
+        FindObjectOfType<GameStatus>().AddToScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position); // Create an audio source that plays "here"
         Destroy(gameObject);
         level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
