@@ -11,6 +11,20 @@ public class GameStatus : MonoBehaviour
     // State variables
     [SerializeField] int currentScore = 0;
 
+    private void Awake() // We apply Singleton design pattern to cache the GameStatus, so points persist
+    {// There can be only one GameStatus and it must be the same.
+        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
+
+        if (gameStatusCount > 1)
+        {
+            Destroy(gameObject); // If there is more than one object, destroy yourself
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject); // If there isn't more than one object, don't destroy yourself
+        }
+    }
+
     private void Start()
     {
         scoreText.text = currentScore.ToString();
