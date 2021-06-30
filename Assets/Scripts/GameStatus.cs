@@ -17,6 +17,7 @@ public class GameStatus : MonoBehaviour
 
         if (gameStatusCount > 1)
         {
+            gameObject.SetActive(false); // Fixes bug where null reference exceptions happen.
             Destroy(gameObject); // If there is more than one object, destroy yourself
         }
         else
