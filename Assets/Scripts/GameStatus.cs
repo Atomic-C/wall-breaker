@@ -45,6 +45,6 @@ public class GameStatus : MonoBehaviour
 
     public void ResetGamePoints()
     {
-        Destroy(gameObject); // This destroys the game object to reset the points.
+        Destroy(gameObject);
     }
 }
