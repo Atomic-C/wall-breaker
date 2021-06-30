@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Status
       objectReference: {fileID: 0}
+    - target: {fileID: 1115471784918124507, guid: cb1c789b6d64f3d4381c8d8b4efe562d, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 961254698}
     - target: {fileID: 1202774092566922104, guid: cb1c789b6d64f3d4381c8d8b4efe562d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -308,6 +312,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70a77fe5cb85cd34bbdf1e13dbdfdd74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &961254698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2013489558996089211, guid: cb1c789b6d64f3d4381c8d8b4efe562d, type: 3}
+  m_PrefabInstance: {fileID: 146533836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1639447379
