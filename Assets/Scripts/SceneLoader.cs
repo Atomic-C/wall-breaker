@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    GameStatus gameStatus;
 
     public void LoadNextScene() // Thus method loads the next scene by incrementing + 1 to the current scene index.
     {
@@ -12,6 +13,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene() // This method loads the first scene, as per the build settings.
     {
+        gameStatus.ResetGamePoints(); // This calls the method responsible for resetting the game points before a new game.
         SceneManager.LoadScene(0);
     }
 
