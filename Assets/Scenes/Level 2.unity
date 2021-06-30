@@ -4165,6 +4165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Status
       objectReference: {fileID: 0}
+    - target: {fileID: 1115471784918124507, guid: cb1c789b6d64f3d4381c8d8b4efe562d, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1811246523}
     - target: {fileID: 1202774092566922104, guid: cb1c789b6d64f3d4381c8d8b4efe562d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4418,6 +4422,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b454d9a3c2eeebc468f7f6f43b5a9eae, type: 3}
+--- !u!114 &1811246523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1772604067, guid: 8d724ff9f59034a4aa89963d835d2ed9, type: 3}
+  m_PrefabInstance: {fileID: 2143969736}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1812701851
 PrefabInstance:
   m_ObjectHideFlags: 0
