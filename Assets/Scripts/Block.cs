@@ -13,12 +13,18 @@ public class Block : MonoBehaviour
     private void Start()
     {
         level = FindObjectOfType<Level>(); // We're looking for an object of type Level to access it's public methods!!!
-        level.CountBreakableBlocks();
+        if (tag == "Breakable") // We create this if statement so that only Breakable objects are counted.
+        {
+            level.CountBreakableBlocks();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) // This method calls DestroyBlock method on collision.
     {
-        DestroyBlock();
+        if (tag == "Breakable") // We create this if statement so only Breakable objects are destroyed, by exclusion.
+        {
+            DestroyBlock();
+        }
     }
 
     private void DestroyBlock()
