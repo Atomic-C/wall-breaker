@@ -4,6 +4,7 @@ public class Block : MonoBehaviour
 {
     // Configuration parameters
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject blockSparklesVFX;
 
     // Cached reference
     Level level; //This is where we cache variable of type Level.
@@ -15,7 +16,7 @@ public class Block : MonoBehaviour
         level.CountBreakableBlocks();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // This method calls DestroyBlock method on collision.
     {
         DestroyBlock();
     }
@@ -27,5 +28,10 @@ public class Block : MonoBehaviour
         Destroy(gameObject);
         level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
                                 // Debug.Log(collision.gameObject.name);
+    }
+
+    private void TriggerSparklesVFX() // This method enables the visual effects upon calling.
+    {
+        GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
     }
 }

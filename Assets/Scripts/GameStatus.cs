@@ -43,7 +43,7 @@ public class GameStatus : MonoBehaviour
         scoreText.text = currentScore.ToString();
     }
 
-    public void ResetGamePoints()
+    public void ResetGamePoints() // This method is supposed to destroy THIS gameObject. This Class we're in.
     {
         Destroy(gameObject);
     }

@@ -13,9 +13,10 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene() // This method loads the first scene, as per the build settings.
     {
-        FindObjectOfType<GameStatus>().ResetGamePoints();
-        //gameStatus.ResetGamePoints(); // This calls the method responsible for resetting the game points before starting the 
+        FindObjectOfType<GameStatus>().ResetGamePoints(); // Apparently we can't instantiate with new keyword!??
         SceneManager.LoadScene(0);
+        //GameStatus gameStatus = new GameStatus();
+        //gameStatus.ResetGamePoints(); // This calls the method responsible for resetting the game points before starting the 
     }
 
     public void EndScenes() // This method calls the Applicaion Quit() method that quits the game. 
