@@ -23,12 +23,17 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        FindObjectOfType<GameStatus>().AddToScore();
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position); // Create an audio source that plays "here"
+        PlayBlockSFX();
         Destroy(gameObject);
         level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
         TriggerSparklesVFX();
         // Debug.Log(collision.gameObject.name);
+    }
+
+    private void PlayBlockSFX() // This method is responsible for sound effects when called.
+    {
+        FindObjectOfType<GameStatus>().AddToScore();
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position); // Create an audio source that plays "here"
     }
 
     private void TriggerSparklesVFX() // This method enables the visual effects upon calling.
