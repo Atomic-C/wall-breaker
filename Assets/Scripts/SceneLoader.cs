@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     GameStatus gameStatus;
 
-    public void LoadNextScene() // Thus method loads the next scene by incrementing + 1 to the current scene index.
+    public void LoadNextScene() // This method loads the next scene by incrementing + 1 to the current scene index.
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);

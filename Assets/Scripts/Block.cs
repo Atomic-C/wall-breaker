@@ -25,7 +25,7 @@ public class Block : MonoBehaviour
     {
         PlayBlockSFX();
         Destroy(gameObject);
-        level.BlockDestroyed(); // Here we countdown the number of blocks on collision.
+        level.BlockDestroyed();
         TriggerSparklesVFX();
         // Debug.Log(collision.gameObject.name);
     }
@@ -39,6 +39,6 @@ public class Block : MonoBehaviour
     private void TriggerSparklesVFX() // This method enables the visual effects upon calling.
     {
         GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
-        Destroy(sparkles, 2f); // This should stop the VFX clone SPAM.
+        Destroy(sparkles, 1f); // This should stop the VFX clone SPAM.
     }
 }

@@ -18,7 +18,7 @@ public class Level : MonoBehaviour
         breakableBlocks++;
     }
 
-    public void BlockDestroyed()
+    public void BlockDestroyed() // Here we countdown the number of blocks on collision.
     {
         breakableBlocks--;
         if (breakableBlocks <= 0) // If we run out of blocks...

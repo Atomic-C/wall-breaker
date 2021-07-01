@@ -37,7 +37,7 @@ public class GameStatus : MonoBehaviour
         Time.timeScale = gameSpeed;
     }
 
-    public void AddToScore()
+    public void AddToScore() // This method increments score points
     {
         currentScore += pointsePerBlockDestroyed; // currentScore = currentScore + pointsPerBlockDestroyed
         scoreText.text = currentScore.ToString();
