@@ -39,5 +39,6 @@ public class Block : MonoBehaviour
     private void TriggerSparklesVFX() // This method enables the visual effects upon calling.
     {
         GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 2f); // This should stop the VFX clone SPAM.
     }
 }
