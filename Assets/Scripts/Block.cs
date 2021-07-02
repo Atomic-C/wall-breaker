@@ -30,11 +30,16 @@ public class Block : MonoBehaviour
     {
         if (tag == "Breakable") // We create this if statement so only Breakable objects are destroyed, by exclusion.
         {
-            timesHit++;
-            if (timesHit >= maxHits)
-            {
-                DestroyBlock();
-            }
+            HandeHit();
+        }
+    }
+
+    private void HandeHit() // This method is now responsible for Block HP.
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
+        {
+            DestroyBlock();
         }
     }
 
