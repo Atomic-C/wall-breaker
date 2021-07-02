@@ -12,10 +12,15 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
+        CountBreakableBlocks();
+    }
+
+    private void CountBreakableBlocks() // This method counts Breakable blocks.
+    {
         level = FindObjectOfType<Level>(); // We're looking for an object of type Level to access it's public methods!!!
         if (tag == "Breakable") // We create this if statement so that only Breakable objects are counted.
         {
-            level.CountBreakableBlocks();
+            level.CountBlocks();
         }
     }
 
