@@ -6,7 +6,7 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
     [SerializeField] int maxHits = 3;
-    [SerializeField] Sprite[] hitSprites;
+
     // Cached reference
     Level level; //This is where we cache variable of type Level.
 
@@ -33,16 +33,6 @@ public class Block : MonoBehaviour
         {
             HandeHit();
         }
-        else
-        {
-            ShowNextHitSprite();
-        }
-    }
-
-    private void ShowNextHitSprite()
-    {
-        int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
     }
 
     private void HandeHit() // This method is now responsible for Block HP.
