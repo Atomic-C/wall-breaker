@@ -5,10 +5,12 @@ public class Block : MonoBehaviour
     // Configuration parameters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
-
+    [SerializeField] int maxHits = 3;
     // Cached reference
     Level level; //This is where we cache variable of type Level.
-    GameStatus gameStatus;
+
+    // State variable
+    [SerializeField] int timesHit; // TODO: Only serialized for debug purposes  
 
     private void Start()
     {
@@ -28,7 +30,11 @@ public class Block : MonoBehaviour
     {
         if (tag == "Breakable") // We create this if statement so only Breakable objects are destroyed, by exclusion.
         {
-            DestroyBlock();
+            timesHit++;
+            if (timesHit >= maxHits)
+            {
+                DestroyBlock();
+            }
         }
     }
 
