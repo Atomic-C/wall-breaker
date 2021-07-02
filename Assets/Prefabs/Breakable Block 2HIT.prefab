@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1586491797397817140}
   - component: {fileID: 1586491797397817131}
   m_Layer: 0
-  m_Name: Breakable Block 2H
+  m_Name: Breakable Block 2HIT
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

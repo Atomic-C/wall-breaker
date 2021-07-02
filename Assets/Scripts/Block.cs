@@ -5,7 +5,7 @@ public class Block : MonoBehaviour
     // Configuration parameters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
-    [SerializeField] int maxHits = 3;
+    [SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
 
     // Cached reference
