@@ -5,7 +5,7 @@ public class Block : MonoBehaviour
     // Configuration parameters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
-    [SerializeField] int maxHits;
+    //[SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
 
     // Cached reference
@@ -39,6 +39,7 @@ public class Block : MonoBehaviour
     private void HandeHit() // This method is now responsible for Block HP.
     {
         timesHit++;
+        int maxHits = hitSprites.Length + 1;
         if (timesHit >= maxHits)
         {
             DestroyBlock();
@@ -52,7 +53,14 @@ public class Block : MonoBehaviour
     private void ShowNextHitSprite()
     {
         int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        if (hitSprites[spriteIndex] != null) // Okay, so this is implemented in case we forget our sprite -.-
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
+        else
+        {
+            Debug.LogError("Block Sprite is missing from array." + gameObject.name); // It's very explicit.
+        }
     }
 
     private void DestroyBlock()
