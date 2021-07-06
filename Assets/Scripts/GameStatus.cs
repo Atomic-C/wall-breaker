@@ -7,6 +7,7 @@ public class GameStatus : MonoBehaviour
     [Range(0f, 2f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsePerBlockDestroyed = 85;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] bool isAutoPlayEnabled;
 
     // State variables
     [SerializeField] int currentScore = 0;
@@ -46,5 +47,10 @@ public class GameStatus : MonoBehaviour
     public void ResetGamePoints() // This method is supposed to destroy THIS gameObject. This Class we're in.
     {
         Destroy(gameObject);
+    }
+
+    public bool IsAutoPlayEnabled() // This should be true or false wether we select autoplay on serialized variable.
+    {
+        return isAutoPlayEnabled;
     }
 }
