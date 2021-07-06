@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
     [SerializeField] AudioClip[] ballSounds;
+    [SerializeField] float radomFactor = 0.2f;
 
 
     // State
@@ -16,12 +17,15 @@ public class Ball : MonoBehaviour
 
     // Cached component references
     AudioSource myAudioSource;
+    Rigidbody2D myRigidBody2D; // Generally when we're doing something on more than one place we start caching components.
+    // Or if we're using GetComponent<> a lot.
 
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle1.transform.position; // Difference between ball and paddle respectively
         myAudioSource = GetComponent<AudioSource>(); // Find component and know it from now on instead of get it all the time.
+        myRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -51,10 +55,13 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) // This method allows sound reproduction on ball collision.
     {
+        Vector2 velocityTweak = new Vector2(Random.Range(0f, radomFactor), Random.Range(0f, radomFactor));
+
         if (hasStarted == true) // This conditional statement limits sound effects until the game starts.
         {
             AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)]; // clip is a random index of our array <3
             myAudioSource.PlayOneShot(clip); // Here we use PlayOneShot to play clip
+            myRigidBody2D.velocity += velocityTweak;
         }
     }
 }

@@ -143,6 +143,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bacc8f9bd4ad951428591667653595ee, type: 3}
   - {fileID: 8300000, guid: ee8cb5452f91c984dbc7ff5b96643f76, type: 3}
   - {fileID: 8300000, guid: 28482125e89c9e24cbf1be673458b682, type: 3}
+  radomFactor: 0.5
 --- !u!82 &-754779652924672011
 AudioSource:
   m_ObjectHideFlags: 0
