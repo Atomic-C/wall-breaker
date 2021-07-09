@@ -17,3 +17,5 @@ public class JukeBox : MonoBehaviour
         }
     }
 }
+// This helped e with GameStatus: https://www.youtube.com/watch?v=JKoBWBXVvKY
+// https://www.youtube.com/watch?v=ToVL_f9G9Yk // Next step is using this guy's logic to change music between scenes smothly.
